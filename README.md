@@ -3,7 +3,7 @@ In the Pokemon Trading Card Game community, it is common to share text-based dec
 
 ![ezgif com-video-to-gif (1)](https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/db7f57b6-383f-409f-b18a-0cba620873a3)
 
-### Built With
+## Built With
 * [React](https://react.dev/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
