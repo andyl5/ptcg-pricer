@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from parse_decklist import parse_decklist
+from modules.parse_decklist import parse_decklist
 
 app = Flask(__name__)
 CORS(app)
