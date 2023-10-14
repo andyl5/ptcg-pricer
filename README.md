@@ -23,7 +23,7 @@ In the Pokemon Trading Card Game community, it is common to share text-based dec
 2. Click the render button. In a few seconds, your decklist will be shown alongside card market prices.
 
 ## Roadmap
-- [ ] Add styling to the components
+- [X] Add styling to the components
 - [ ] Add in-app instructions on the accepted text-based formatting
 - [ ] Add total deck price
 - [ ] Add 'export as image' feature
