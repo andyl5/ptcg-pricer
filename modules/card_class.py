@@ -4,12 +4,13 @@ class Card:
         self.card_name = ""
         self.card_number = card_number
         self.card_supertype = ""
-        self.card_count = card_count
+        self.card_count = int(card_count)
         self.ptcgoCode = ptcgoCode
-        self.lowest_market_price = 0
+        # self.lowest_market_price = 0
         self.card_image_large = ""
         self.tcgplayer_url = ""
         self.card_symbol = ""
+        self.card_total_price = 0
 
     def set_card_id(self, card_id):
         self.card_id = card_id
@@ -23,8 +24,8 @@ class Card:
     def set_image_large(self, card_image_large):
         self.card_image_large = card_image_large
 
-    def set_lowest_market_price(self, lowest_market_price):
-        self.lowest_market_price = lowest_market_price
+    # def set_lowest_market_price(self, lowest_market_price):
+    #     self.lowest_market_price = lowest_market_price
 
     def set_tcgplayer_url(self, tcgplayer_url):
         self.tcgplayer_url = tcgplayer_url
@@ -32,14 +33,17 @@ class Card:
     def set_card_symbol(self, card_symbol):
         self.card_symbol = card_symbol
 
+    def set_card_total_price(self, card_total_price):
+        self.card_total_price = card_total_price
+
     def return_ptcgoCode(self):
         return self.ptcgoCode
     
     def return_card_number(self):
         return self.card_number
     
-    # def return_card_count(self):
-    #     return self.card_count
+    def return_card_count(self):
+        return self.card_count
     
     # def return_card_id(self):
     #     return self.card_id
