@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { ListItem, TextareaAutosize, Card, CardHeader, Grid, Container } from "@mui/material";
 import { LoadingButton, Masonry } from "@mui/lab";
+import cardback from '../images/ptcg-cardback.jpg'
 
 
 
@@ -11,7 +12,7 @@ function MainDeck() {
   const [decklistData, setDecklistData] = useState([])
   const [deckStats, setDeckStats] = useState({'deck_total_price':'0', 'pokemon_count': 0, 'trainer_count': 0, 'energy_count': 0})
   const [importedDecklist, setImportedDecklist] = useState('')
-  const [cardImage, setCardImage] = useState()
+  const [cardImage, setCardImage] = useState(cardback)
 
   const [loading, setLoading] = useState(false)
 
@@ -65,7 +66,7 @@ function MainDeck() {
       style={{backgroundColor: '#EBEBEB'}}
     >
       <Grid container>
-        <Grid item md={9}>
+        <Grid item md={8}>
           {/* <Masonry columns={2} style={{backgroundColor: 'blue'}}> */}
           <Masonry columns={2} spacing={4}>
             <Card>
@@ -130,10 +131,17 @@ function MainDeck() {
           </Masonry>
         </Grid>
 
-        <Grid item md={3}>
+        <Grid item md={4}>
           {/* <Masonry columns={1} style={{backgroundColor: 'yellow'}}> */}
             <img src={cardImage} style={{height: 'auto', width: '100%'}}/>
           {/* </Masonry> */}
+
+          <Card>
+            <CardHeader
+              title={`Total: $${deckStats.deck_total_price}`}
+              // style={{backgroundColor: '#A1162E', color: 'white', textAlign: 'center'}} 
+            ></CardHeader>
+          </Card>
         </Grid>
       </Grid>
     </Container>
