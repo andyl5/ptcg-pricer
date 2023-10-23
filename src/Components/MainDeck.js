@@ -137,7 +137,8 @@ function MainDeck() {
           <Card>
             <CardHeader
               title={`Total: $${deckStats.deck_total_price}`}
-              // style={{backgroundColor: '#A1162E', color: 'white', textAlign: 'center'}} 
+              // style={{color: '#00899F'}}
+              style={{backgroundColor: '#A1162E', color: 'white', textAlign: 'center'}} 
             ></CardHeader>
           </Card>
         </Grid>

@@ -17,7 +17,9 @@ function CardDetail(props) {
             <p>{props.name} <img src={props.symbol} style={{height: '1.25em'}}/></p>
           </div>
           <div className="col-2">
-            <p>${props.price}</p>
+            <p
+              style={{color: '#00899F'}}
+              >${props.price}</p>
           </div>
         </div>
       </a>
