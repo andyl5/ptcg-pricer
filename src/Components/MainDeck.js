@@ -8,11 +8,11 @@ import { LoadingButton, Masonry } from "@mui/lab";
 
 function MainDeck() {
 
-  // replace data with the response from the backend API
-
   const [decklistData, setDecklistData] = useState([])
+  const [deckStats, setDeckStats] = useState({'deck_total_price':'0', 'pokemon_count': 0, 'trainer_count': 0, 'energy_count': 0})
   const [importedDecklist, setImportedDecklist] = useState('')
-  const [cardImage, setCardImage] = useState(decklistData['card_image_large'])
+  const [cardImage, setCardImage] = useState()
+
   const [loading, setLoading] = useState(false)
 
   const handleHover = (imageUrl) => {
@@ -34,9 +34,11 @@ function MainDeck() {
       responseType: 'json'
     })
     .then((response) => {
+      console.log(response)
+      setDeckStats(response.data.pop())
       setDecklistData(response.data)
-      console.log(response.data)
-      setLoading(false)
+
+      setLoading(false)      
     })
     .catch((error => console.log(error)))
   }
@@ -48,7 +50,6 @@ function MainDeck() {
   return (
     <div>
 
-      {/* <textarea rows='10' cols='40' placeholder='Enter decklist' spellCheck='false' onChange={handleChangeDecklist}></textarea> */}
       <TextareaAutosize
         spellCheck={false}
         aria-label="minimum height"
@@ -69,7 +70,8 @@ function MainDeck() {
           <Masonry columns={2} spacing={4}>
             <Card>
               <CardHeader 
-                title={`Pokémon(${pokemonCards.length})`} 
+                title={`Pokémon (${deckStats.pokemon_count})`}
+                style={{backgroundColor: '#A1162E', color: 'white'}} 
               ></CardHeader>
               {pokemonCards.map(card => (
                 <ListItem divider>
@@ -87,7 +89,10 @@ function MainDeck() {
             </Card>
 
             <Card>
-              <CardHeader title={`Trainer (${trainerCards.length})`}></CardHeader>
+              <CardHeader 
+                title={`Trainer (${deckStats.trainer_count})`}
+                style={{backgroundColor: '#A1162E', color: 'white'}} 
+              ></CardHeader>
               {trainerCards.map(card => (
                 <ListItem divider>
                   <CardDetail 
@@ -104,7 +109,10 @@ function MainDeck() {
             </Card>
 
             <Card>
-              <CardHeader title={`Energy (${energyCards.length})`}></CardHeader>
+              <CardHeader 
+                title={`Energy (${deckStats.energy_count})`}
+                style={{backgroundColor: '#A1162E', color: 'white'}} 
+              ></CardHeader>
               {energyCards.map(card => (
                 <ListItem divider>
                   <CardDetail 

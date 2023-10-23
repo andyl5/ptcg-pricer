@@ -134,7 +134,7 @@ ptcg_sets = [
 	{'id': 'swsh5', 'name': 'Battle Styles', 'ptcgoCode': 'BST'},
 	{'id': 'swsh6', 'name': 'Chilling Reign', 'ptcgoCode': 'CRE'},
 	{'id': 'swsh7', 'name': 'Evolving Skies', 'ptcgoCode': 'EVS'},
-	{'id': 'cel25c', 'name': 'Celebrations: Classic Collection', 'ptcgoCode': 'CEL'},
+	# {'id': 'cel25c', 'name': 'Celebrations: Classic Collection', 'ptcgoCode': 'CEL'},
 	{'id': 'cel25', 'name': 'Celebrations', 'ptcgoCode': 'CEL'},
 	{'id': 'swsh8', 'name': 'Fusion Strike', 'ptcgoCode': 'FST'},
 	{'id': 'swsh9', 'name': 'Brilliant Stars', 'ptcgoCode': 'BRS'},
