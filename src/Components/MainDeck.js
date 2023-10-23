@@ -3,9 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { ListItem, TextareaAutosize, Card, CardHeader, Grid, Container } from "@mui/material";
 import { LoadingButton, Masonry } from "@mui/lab";
-import cardback from '../images/ptcg-cardback.jpg'
-
-
+import cardback from '../images/ptcg-cardback.png'
 
 function MainDeck() {
 
