@@ -25,6 +25,6 @@ In the Pokemon Trading Card Game community, it is common to share text-based dec
 
 ## Roadmap
 - [X] Add styling to the components
-- [ ] Add total deck price
-- [ ] Add in-app instructions on the accepted text-based formatting
+- [X] Add total deck price
+- [ ] Add usage instructions
 - [ ] Add mobile responsiveness
