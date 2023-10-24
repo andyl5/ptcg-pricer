@@ -1,8 +1,7 @@
 # Pokemon TCG Decklist Pricing
 In the Pokemon Trading Card Game community, it is common to share text-based decklists with each other. This tool allows players to import text-based decklists and see the market price for each card in the deck.
 
-![ezgif com-video-to-gif (1)](https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/fb4dd559-4e45-4983-b2dd-011ad7ef82ba)
-
+https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/4c961f97-b89f-474c-8481-3a942e4d1b94
 
 ## Built With
 * [React](https://react.dev/)
