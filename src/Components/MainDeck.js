@@ -1,9 +1,9 @@
-import CardDetail from "./CardDetail";
 import { useState } from "react";
 import axios from "axios";
-import { ListItem, TextareaAutosize, Card, CardHeader, Grid, Container } from "@mui/material";
+import { TextareaAutosize, Card, CardHeader, Grid, Container } from "@mui/material";
 import { LoadingButton, Masonry } from "@mui/lab";
 import cardback from '../images/ptcg-cardback.png'
+import CardTypeColumn from "./CardTypeColumn";
 
 function MainDeck() {
 
@@ -65,74 +65,15 @@ function MainDeck() {
     >
       <Grid container>
         <Grid item md={8}>
-          {/* <Masonry columns={2} style={{backgroundColor: 'blue'}}> */}
           <Masonry columns={2} spacing={4}>
-            <Card>
-              <CardHeader 
-                title={`Pokémon (${deckStats.pokemon_count})`}
-                style={{backgroundColor: '#A1162E', color: 'white'}} 
-              ></CardHeader>
-              {pokemonCards.map(card => (
-                <ListItem divider>
-                  <CardDetail 
-                    count={card.card_count} 
-                    name={card.card_name}
-                    symbol={card.card_symbol}
-                    price={card.card_total_price} 
-                    imageUrl={card.card_image_large}
-                    tcgplayerUrl={card.tcgplayer_url}
-                    handleHover={handleHover}
-                    />
-                </ListItem>
-              ))}
-            </Card>
-
-            <Card>
-              <CardHeader 
-                title={`Trainer (${deckStats.trainer_count})`}
-                style={{backgroundColor: '#A1162E', color: 'white'}} 
-              ></CardHeader>
-              {trainerCards.map(card => (
-                <ListItem divider>
-                  <CardDetail 
-                    count={card.card_count} 
-                    name={card.card_name}
-                    symbol={card.card_symbol}
-                    price={card.card_total_price} 
-                    imageUrl={card.card_image_large}
-                    tcgplayerUrl={card.tcgplayer_url}
-                    handleHover={handleHover}
-                  />
-                </ListItem>
-              ))}
-            </Card>
-
-            <Card>
-              <CardHeader 
-                title={`Energy (${deckStats.energy_count})`}
-                style={{backgroundColor: '#A1162E', color: 'white'}} 
-              ></CardHeader>
-              {energyCards.map(card => (
-                <ListItem divider>
-                  <CardDetail 
-                    count={card.card_count} 
-                    name={card.card_name}
-                    symbol={card.card_symbol}
-                    price={card.card_total_price} 
-                    imageUrl={card.card_image_large}
-                    tcgplayerUrl={card.tcgplayer_url}
-                    handleHover={handleHover}
-                  />
-                </ListItem>
-              ))}
-            </Card>
+            <CardTypeColumn cards={pokemonCards} count={deckStats.pokemon_count} handleHover={handleHover}/>
+            <CardTypeColumn cards={trainerCards} count={deckStats.trainer_count} handleHover={handleHover}/>
+            <CardTypeColumn cards={energyCards} count={deckStats.energy_count} handleHover={handleHover}/>
           </Masonry>
         </Grid>
 
         <Grid item md={4}>
-          {/* <Masonry columns={1} style={{backgroundColor: 'yellow'}}> */}
-            <img src={cardImage} style={{height: 'auto', width: '100%'}}/>
-          {/* </Masonry> */}
+          <img src={cardImage} style={{height: 'auto', width: '100%'}}/>
 
           <Card>
             <CardHeader
