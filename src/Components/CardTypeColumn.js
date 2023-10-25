@@ -6,7 +6,7 @@ function CardTypeColumn(props) {
     <div>
       <Card>
         <CardHeader 
-          title={`Pokémon (${props.count})`}
+          title={`${props.supertype} (${props.count})`}
           style={{backgroundColor: '#A1162E', color: 'white'}} 
         ></CardHeader>
         {props.cards.map(card => (

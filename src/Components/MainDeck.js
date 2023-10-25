@@ -60,19 +60,17 @@ function MainDeck() {
       <LoadingButton onClick={handleSubmitDecklist} loading={loading} loadingIndicator="Loading…" variant="outlined">Submit</LoadingButton>
 
 
-    <Container 
-      style={{backgroundColor: '#EBEBEB'}}
-    >
+    <Container disableGutters style={{backgroundColor: '#EBEBEB'}}>
       <Grid container>
-        <Grid item md={8}>
-          <Masonry columns={2} spacing={4}>
-            <CardTypeColumn cards={pokemonCards} count={deckStats.pokemon_count} handleHover={handleHover}/>
-            <CardTypeColumn cards={trainerCards} count={deckStats.trainer_count} handleHover={handleHover}/>
-            <CardTypeColumn cards={energyCards} count={deckStats.energy_count} handleHover={handleHover}/>
+        <Grid item md={9}>
+          <Masonry columns={2} spacing={3}>
+            <CardTypeColumn supertype='Pokémon' cards={pokemonCards} count={deckStats.pokemon_count} handleHover={handleHover}/>
+            <CardTypeColumn supertype='Trainer' cards={trainerCards} count={deckStats.trainer_count} handleHover={handleHover}/>
+            <CardTypeColumn supertype='Energy' cards={energyCards} count={deckStats.energy_count} handleHover={handleHover}/>
           </Masonry>
         </Grid>
 
-        <Grid item md={4}>
+        <Grid item md={3}>
           <img src={cardImage} style={{height: 'auto', width: '100%'}}/>
 
           <Card>
