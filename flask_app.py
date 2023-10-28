@@ -7,6 +7,6 @@ CORS(app)
 
 @app.route("/", methods=['GET'])
 def retrieve_data():
-    imported_decklist = request.args.get('importedDecklist')
-    deck_data = parse_decklist(imported_decklist)
+    input_decklist = request.args.get('inputDecklist')
+    deck_data = parse_decklist(input_decklist)
     return jsonify(deck_data)

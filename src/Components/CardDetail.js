@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Grid, Paper } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 
 function CardDetail(props) {
 

@@ -1,17 +1,18 @@
 import { useState } from "react";
 import axios from "axios";
-import { TextareaAutosize, Card, CardHeader, Grid, Container } from "@mui/material";
-import { LoadingButton, Masonry } from "@mui/lab";
+import { Card, CardHeader, Grid, Container } from "@mui/material";
+import { Masonry } from "@mui/lab";
 import cardback from '../images/ptcg-cardback.png'
 import CardTypeColumn from "./CardTypeColumn";
+import DecklistInput from "./DecklistInput";
 
 function MainDeck() {
 
   const [decklistData, setDecklistData] = useState([])
   const [deckStats, setDeckStats] = useState({'deck_total_price':'0', 'pokemon_count': 0, 'trainer_count': 0, 'energy_count': 0})
-  const [importedDecklist, setImportedDecklist] = useState('')
   const [cardImage, setCardImage] = useState(cardback)
-
+  
+  const [inputDecklist, setInputDecklist] = useState('')
   const [loading, setLoading] = useState(false)
 
   const handleHover = (imageUrl) => {
@@ -19,7 +20,7 @@ function MainDeck() {
   }
 
   const handleChangeDecklist = (event) => {
-    setImportedDecklist(event.target.value)
+    setInputDecklist(event.target.value)
   } 
 
   const handleSubmitDecklist = () => {
@@ -28,7 +29,7 @@ function MainDeck() {
       url: 'http://127.0.0.1:5000/',
       method: 'get',
       params: {
-        importedDecklist: importedDecklist
+        inputDecklist: inputDecklist
       },
       responseType: 'json'
     })
@@ -48,41 +49,32 @@ function MainDeck() {
 
   return (
     <div>
-
-      <TextareaAutosize
-        spellCheck={false}
-        aria-label="minimum height"
-        maxRows={10}
-        cols='35'
-        placeholder="Import decklist"
-        onChange={handleChangeDecklist}
+      <DecklistInput 
+        handleChangeDecklist={handleChangeDecklist} 
+        handleSubmitDecklist={handleSubmitDecklist}
+        loading={loading}  
       />
-      <LoadingButton onClick={handleSubmitDecklist} loading={loading} loadingIndicator="Loading…" variant="outlined">Submit</LoadingButton>
+      <Container disableGutters style={{backgroundColor: '#EBEBEB'}}>
+        <Grid container>
+          <Grid item md={9}>
+            <Masonry columns={2} spacing={3}>
+              <CardTypeColumn supertype='Pokémon' cards={pokemonCards} count={deckStats.pokemon_count} handleHover={handleHover}/>
+              <CardTypeColumn supertype='Trainer' cards={trainerCards} count={deckStats.trainer_count} handleHover={handleHover}/>
+              <CardTypeColumn supertype='Energy' cards={energyCards} count={deckStats.energy_count} handleHover={handleHover}/>
+            </Masonry>
+          </Grid>
 
-
-    <Container disableGutters style={{backgroundColor: '#EBEBEB'}}>
-      <Grid container>
-        <Grid item md={9}>
-          <Masonry columns={2} spacing={3}>
-            <CardTypeColumn supertype='Pokémon' cards={pokemonCards} count={deckStats.pokemon_count} handleHover={handleHover}/>
-            <CardTypeColumn supertype='Trainer' cards={trainerCards} count={deckStats.trainer_count} handleHover={handleHover}/>
-            <CardTypeColumn supertype='Energy' cards={energyCards} count={deckStats.energy_count} handleHover={handleHover}/>
-          </Masonry>
+          <Grid item md={3}>
+            <img src={cardImage} style={{height: 'auto', width: '100%'}}/>
+            <Card>
+              <CardHeader
+                title={`Total: $${deckStats.deck_total_price}`}
+                style={{backgroundColor: '#A1162E', color: 'white', textAlign: 'center'}} 
+              ></CardHeader>
+            </Card>
+          </Grid>
         </Grid>
-
-        <Grid item md={3}>
-          <img src={cardImage} style={{height: 'auto', width: '100%'}}/>
-
-          <Card>
-            <CardHeader
-              title={`Total: $${deckStats.deck_total_price}`}
-              // style={{color: '#00899F'}}
-              style={{backgroundColor: '#A1162E', color: 'white', textAlign: 'center'}} 
-            ></CardHeader>
-          </Card>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
     </div>
   );
 }
