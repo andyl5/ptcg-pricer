@@ -7,10 +7,8 @@ def main(text_decklist):
 
     query_params_list = [f'id:{id}' for id in deck_dict]
     query_params_string = " OR ".join(query_params_list)
-    print(query_params_string)
 
     api_response = make_api_request(query_params_string)
-    print(api_response)
 
     deck_dict['deck_stats'] = {
         'deck_total_price': 0,
@@ -27,9 +25,15 @@ def main(text_decklist):
         deck_dict[card_id]['name'] = r_card['name']
         deck_dict[card_id]['supertype'] = r_card['supertype']
         deck_dict[card_id]['card_image'] = r_card['images']['large']
-        deck_dict[card_id]['total_card_price'] = '{:.2f}'.format(get_tcgplayer_price(r_card['tcgplayer'], int(card_count)))
         deck_dict[card_id]['set_symbol'] = r_card['set']['images']['symbol']
-        deck_dict[card_id]['tcgplayer_url'] = r_card['tcgplayer']['url']
+
+        # Check if 'tcgplayer' key is present in 'r_card' dictionary
+        if 'tcgplayer' in r_card:
+            deck_dict[card_id]['total_card_price'] = '{:.2f}'.format(get_tcgplayer_price(r_card['tcgplayer'], int(card_count)))
+            deck_dict[card_id]['tcgplayer_url'] = r_card['tcgplayer']['url']
+        else:
+            deck_dict[card_id]['total_card_price'] = '0.00'
+            deck_dict[card_id]['tcgplayer_url'] = ''
 
         # Update counts and total prices in deck_stats
         deck_dict['deck_stats']['deck_total_price'] += float(deck_dict[card_id]['total_card_price'])
@@ -40,8 +44,8 @@ def main(text_decklist):
             deck_dict['deck_stats']['trainer_count'] += int(card_count)
         elif deck_dict[card_id]['supertype'] == 'Energy':
             deck_dict['deck_stats']['energy_count'] += int(card_count)
-
+    
+    deck_dict['deck_stats']['deck_total_price'] = '{:.2f}'.format(deck_dict['deck_stats']['deck_total_price'])
     deck_list_response = [card for card in deck_dict.values()]
-    print(deck_list_response)
 
     return deck_list_response
