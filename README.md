@@ -25,5 +25,5 @@ https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/19cfcbe2-902a-44
 ## Roadmap
 - [X] Add styling to the components
 - [X] Add total deck price
+- [X] Optimize speed of backend
 - [ ] Add usage instructions
-- [ ] Add mobile responsiveness
