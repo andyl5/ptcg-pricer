@@ -37,15 +37,14 @@ function MainDeck() {
       console.log(response)
       setDeckStats(response.data.pop())
       setDecklistData(response.data)
-
       setLoading(false)      
     })
     .catch((error => console.log(error)))
   }
 
-  const pokemonCards = decklistData.filter(card => card.card_supertype === 'Pokémon');
-  const trainerCards = decklistData.filter(card => card.card_supertype === 'Trainer');
-  const energyCards = decklistData.filter(card => card.card_supertype === 'Energy');
+  const pokemonCards = decklistData.filter(card => card.supertype === 'Pokémon');
+  const trainerCards = decklistData.filter(card => card.supertype === 'Trainer');
+  const energyCards = decklistData.filter(card => card.supertype === 'Energy');
 
   return (
     <div>

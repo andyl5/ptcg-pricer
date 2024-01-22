@@ -150,9 +150,11 @@ ptcg_sets = [
 	{'id': 'svp', 'name': 'Scarlet & Violet Black Star Promos', 'ptcgoCode': 'PR-SV'},
 	# {'id': 'swsh12pt5gg', 'name': 'Crown Zenith Galarian Gallery', 'ptcgoCode': 'CRZ'},
 	{'id': 'swsh12pt5', 'name': 'Crown Zenith', 'ptcgoCode': 'CRZ'},
+	# {'id': 'sve', 'name': 'Scarlet & Violet Energies', 'ptcgoCode': 'SVE'},
+	{'id': 'sve', 'name': 'Scarlet & Violet Energies', 'ptcgoCode': 'Energy'},
 	{'id': 'sv1', 'name': 'Scarlet & Violet', 'ptcgoCode': 'SVI'},
-	{'id': 'sve', 'name': 'Scarlet & Violet Energies', 'ptcgoCode': 'SVE'},
 	{'id': 'sv2', 'name': 'Paldea Evolved', 'ptcgoCode': 'PAL'},
 	{'id': 'sv3', 'name': 'Obsidian Flames', 'ptcgoCode': 'OBF'},
-	{'id': 'sv3pt5', 'name': '151', 'ptcgoCode': 'MEW'}
+	{'id': 'sv3pt5', 'name': '151', 'ptcgoCode': 'MEW'},
+    {'id': 'sv4', 'name': 'Paradox Rift', 'ptcgoCode': 'PAR'}
 ]
