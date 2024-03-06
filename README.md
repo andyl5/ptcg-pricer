@@ -10,9 +10,9 @@ https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/411bac87-decd-4a
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 * [PokemonTCG API](https://docs.pokemontcg.io/)
 
-## Setup and Installation
+## Setup and Installation (locally)
 1. Make sure you have Node.js installed. You can download it here at [https://nodejs.org](https://nodejs.org).
-2. Clone the project to your local machine. `git clone https://github.com/andyl5/ptcg-decklist-pricing`
+2. Clone the project to your local machine. `git clone https://github.com/andyl5/ptcg-pricer`
 3. Install the Python backend dependencies. `pip install -r requirements.txt`
 4. Install the frontend dependencies. `npm install`
 5. Run the frontend application in one terminal `npm start`, run the backend application in another terminal `flask --app flask_app run`.
@@ -26,4 +26,3 @@ https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/411bac87-decd-4a
 - [X] Add styling to the components
 - [X] Add total deck price
 - [X] Speed up data retrieval
-- [ ] Add usage instructions
