@@ -1,4 +1,4 @@
-# Pokemon TCG Decklist Pricing
+# Pokemon TCG Pricer
 In the Pokemon Trading Card Game community, it is common to share text-based decklists with one another. This tool allows players to import text-based decklists and see the market prices for the cards in their decks.
 
 ## Demo
