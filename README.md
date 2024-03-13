@@ -8,8 +8,6 @@ https://github.com/andyl5/ptcg-decklist-pricing/assets/81489476/411bac87-decd-4a
 
 **Tech used:** React, MaterialUI, Flask, PokemonTCG API
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
-
 ## How It Works
 1. Import a PTCG text-based decklist from either the Pokemon Trading Card Game Live, or another deck sharing website such as LimitlessTCG.
     * Cards must be in the following format: `cardCount cardName cardSet cardNumber`. Example: `4 Comfey LOR 79`, separated by a line break.
@@ -24,11 +22,7 @@ Here's where you can go to town on how you actually built this thing. Write as m
 5. Run the frontend application in one terminal `npm start`, run the backend application in another terminal `flask --app flask_app run`.
 
 ## Optimizations
-Initially, 
-packaged individual card API requests into a single batch file, improving api response by 5x times faster
-
+Originally, each card in the deck would trigger a separate API request. For example, if there are 30 unique cards in the deck, there would be 30 requests to the API. To optimize the performance of the API calls, I consolidated the individual API calls into a singular batch request. This resulted in 5x faster API response time and significantly reduced overhead.
 
 ## Lessons Learned:
-
-learned how to handle image changes onhover, by having the parent state control which card was "active" aka being hovered
-
+I learned about lifting state up in React and applied this concept to dynamically change the "active" card image displayed whenever the user hovers over a different card in the deck.
