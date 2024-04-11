@@ -156,5 +156,7 @@ ptcg_sets = [
 	{'id': 'sv2', 'name': 'Paldea Evolved', 'ptcgoCode': 'PAL'},
 	{'id': 'sv3', 'name': 'Obsidian Flames', 'ptcgoCode': 'OBF'},
 	{'id': 'sv3pt5', 'name': '151', 'ptcgoCode': 'MEW'},
-    {'id': 'sv4', 'name': 'Paradox Rift', 'ptcgoCode': 'PAR'}
+    {'id': 'sv4', 'name': 'Paradox Rift', 'ptcgoCode': 'PAR'},
+    {'id': 'sv4pt5', 'name': 'Paldean Fates', 'ptcgoCode': 'PAF'},
+    {'id': 'sv5', 'name': 'Temporal Forces', 'ptcgoCode': 'TEF'}
 ]
